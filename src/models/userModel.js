@@ -67,6 +67,10 @@ userSchema.methods.validatePassword = async function (passwordInputByUser) {
   return isPasswordValid;
 };
 
+userSchema.methods.validateURL = async function (URL) {
+  return validator.isURLValid(URL);
+};
+
 const User = model("User", userSchema);
 
 module.exports = { User };
